@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+a, button:hover{
+    text-decoration: none;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+a:hover, button:hover{
+
+    opacity: 0.6;
+}
+
+textarea:focus, input:focus, select:focus, button:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #DCDCDC;
+}
+
+.content{
+    background: #A9A9A9;
+    padding: 20px 40px;
+    float: left;
+    width: 100%;
+}
+
+.group-color{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.group-color input{
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.content h2{
+    margin-bottom: 20px;
+}
