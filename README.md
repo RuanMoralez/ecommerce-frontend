@@ -28,5 +28,3 @@ https://www.npmjs.com/package/vue-slick-carousel
 
 ### components external (sidebar-menu)
 https://github.com/yaminncco/vue-sidebar-menu
-
-mais um teste
