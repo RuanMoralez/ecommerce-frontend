@@ -7,7 +7,9 @@
     <Banner1Component v-if="banner === '1' "/>
     <Banner2Component v-if="banner === '2' "/>
     <Banner3Component v-if="banner === '3' "/>
-    lista produto
+
+    <ListProductComponent />
+
 
   </div>
 
@@ -19,6 +21,7 @@ import HeaderComponent from "@/components/HeaderComponent";
 import Banner1Component from "@/components/themeBanner/Banner1Component";
 import Banner2Component from "@/components/themeBanner/Banner2Component";
 import Banner3Component from "@/components/themeBanner/Banner3Component";
+import ListProductComponent from "@/components/Product/ListProductComponent"
 
 export default {
   name: 'Home',
@@ -26,7 +29,9 @@ export default {
     HeaderComponent,
     Banner1Component,
     Banner2Component,
-    Banner3Component
+    Banner3Component,
+    ListProductComponent
+
   },
   data: function () {
     return {
