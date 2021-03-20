@@ -26,11 +26,11 @@ export default {
 <style scoped>
 
 .card {
-  background-color: #6959CD;
   width: calc((100%/5));
   border-right: 10px solid #ffffff;
   margin-bottom: 10px;
   float: left;
+  color: dimgray;
 }
 
 .card img{
