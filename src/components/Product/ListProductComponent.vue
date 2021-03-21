@@ -13,6 +13,8 @@
       <ProductComponent />
       <ProductComponent />
       <ProductComponent />
+      <ProductComponent />
+      <ProductComponent />
 
 
     </div>
