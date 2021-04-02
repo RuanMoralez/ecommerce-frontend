@@ -153,4 +153,7 @@ export default {
   }
 }
 
+/* config banner */
+.slick-slider {overflow:hidden;}
+
 </style>

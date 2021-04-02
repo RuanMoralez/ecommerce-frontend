@@ -41,4 +41,8 @@ export default {
     height: 300px;
   }
 }
+
+/* config banner */
+.slick-slider {overflow:hidden;}
+
 </style>
