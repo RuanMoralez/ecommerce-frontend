@@ -95,6 +95,7 @@ export default {
     width: 50%;
     background-color: cornflowerblue;
     height: 100%;
+    font-size: 0;
   }
 
   #box-column2 {
@@ -154,6 +155,6 @@ export default {
 }
 
 /* config banner */
-.slick-slider {overflow:hidden;}
+.slick-slider {overflow:hidden; width: 113% !important; left: -7%;}
 
 </style>

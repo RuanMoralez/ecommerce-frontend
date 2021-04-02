@@ -153,6 +153,6 @@ export default {
 }
 
 /* config banner */
-.slick-slider {overflow:hidden;}
+.slick-slider {overflow:hidden; width: 113% !important; left: -7%;}
 
 </style>
