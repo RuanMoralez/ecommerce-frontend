@@ -17,8 +17,11 @@
             <a href="#"><i class="fas fa-user-circle"></i></a>
           </div>
           <div id="link-login">
-            <a href="#">Olá, faça login</a><br>
-            <a href="#">ou cadastra-se</a>
+            <div v-if="name === ''">
+              <a v-on:click="this.openLoginAndRegister">Olá, faça login</a><br>
+            </div>
+            <p style='color: #fff' v-if="name !== ''">Olá, {{ name }}!</p>
+            <a v-on:click="this.openLoginAndRegister" v-if="name === '' ">ou cadastra-se</a>
           </div>
         </div>
         <a id="icon-cart" href="#"><i class="fas fa-shopping-bag"></i></a>
@@ -40,24 +43,39 @@
 
 <script>
 
-import MenuMobile from "@/components/themeMenu/MenuMobile";
+import MenuMobile from "@/components/ThemeMenu/MenuMobile";
 
 export default {
     name: "HeaderComponent",
   components: {
     MenuMobile
   },
+
   props:{
     themeColor: String,
   },
+
   data: function () {
     return {
       openMenu: false,
-      color: this.themeColor
+      color: this.themeColor,
+      name:'',
     }
   },
-  created() {
 
+  mounted() {
+    console.log(this.user)
+    this.checkUser()
+  },
+
+  methods:{
+    openLoginAndRegister: function (){
+        this.$emit("openLoginAndRegister")
+      },
+    checkUser(){
+      let user = JSON.parse(localStorage.getItem('user'))
+      this.name = user.name
+    }
   }
 }
 
