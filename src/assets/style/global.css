@@ -53,3 +53,6 @@ hr {
 .content h2{
     margin-bottom: 20px;
 }
+
+/* config banner */
+.slick-dots {bottom: 0 !important;}

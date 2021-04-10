@@ -26,6 +26,20 @@
             <img class="slide-img" src="http://blog.sebraees.com.br/wp-content/uploads/2019/02/roupas-1.jpeg" alt="">
           </div>
         </div>
+      
+        <!-- show btn next/previows -->
+        <template #prevArrow="arrowOption">
+          <div class="custom-arrow">
+            {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+          </div>
+        </template>
+
+        <template #nextArrow="arrowOption">
+          <div class="custom-arrow">
+            {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+          </div>
+        </template>
+      
       </VueSlickCarousel>
     </div>
     <!-- Col2 Banner -->
@@ -154,5 +168,8 @@ export default {
 
 /* config banner */
 .slick-slider {overflow:hidden; width: 113% !important; left: -7%;}
+
+.slick-prev {left:7%;z-index:1;}
+.slick-next {right:6%;z-index:1;}
 
 </style>
