@@ -5,7 +5,8 @@
     <!-- Col1 slide -->
     <div id="box-column1">
       <!-- Slide -->
-      <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="true">
+      <!-- <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="false"> -->
+        <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="false">
         <div>
           <img class="slide-img"
                src="https://super.abril.com.br/wp-content/uploads/2012/03/por-que-medidas-de-roupas-nacc83o-sacc83o-padronizadas.jpg"
@@ -26,6 +27,20 @@
             <img class="slide-img" src="http://blog.sebraees.com.br/wp-content/uploads/2019/02/roupas-1.jpeg" alt="">
           </div>
         </div>
+
+        <!-- show btn next/previows -->
+        <template #prevArrow="arrowOption">
+          <div class="custom-arrow">
+            {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+          </div>
+        </template>
+
+        <template #nextArrow="arrowOption">
+          <div class="custom-arrow">
+            {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+          </div>
+        </template>
+
       </VueSlickCarousel>
     </div>
     <!-- Col2 Banner -->
@@ -128,7 +143,7 @@ export default {
   }
 
   #box-column1 {
-    width: 50%;
+    width: 51%;
     background-color: cornflowerblue;
     height: 100%;
   }
@@ -156,6 +171,14 @@ export default {
 }
 
 /* config banner */
-.slick-slider {overflow:hidden; width: 113% !important; left: -7%;}
+.slick-slider {
+  overflow:hidden;
+  /* width: 113% !important;  */
+  /* left: -7%;  */
+  z-index: 0;
+}
+
+.slick-prev {left:1%; z-index:1;}
+.slick-next {right:1%;z-index:1;}
 
 </style>

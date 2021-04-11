@@ -9,6 +9,20 @@
       </div>
       <div><a href="#"><img class="slide-img"
                             src="https://images.tcdn.com.br/img/img_prod/743485/1604870247_banner603.jpg"></a></div>
+    
+    <!-- show btn next/previows -->
+    <template #prevArrow="arrowOption">
+      <div class="custom-arrow">
+        {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+      </div>
+    </template>
+
+    <template #nextArrow="arrowOption">
+      <div class="custom-arrow">
+        {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+      </div>
+    </template>
+
     </VueSlickCarousel>
   </div>
 </template>
@@ -44,5 +58,8 @@ export default {
 
 /* config banner */
 .slick-slider {overflow:hidden;}
+
+.slick-prev {left:1%;z-index:1;}
+.slick-next {right:1%;z-index:1;}
 
 </style>
