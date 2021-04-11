@@ -56,3 +56,7 @@ hr {
 
 /* config banner */
 .slick-dots {bottom: 0 !important;}
+
+.group-banner{
+    margin-top: 60px;
+}

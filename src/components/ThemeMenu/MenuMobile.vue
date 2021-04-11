@@ -50,6 +50,7 @@ export default {
 
 #group-profile{
   padding: 30px 20px;
+  margin-top: 60px;
 }
 
 #img-profile{
