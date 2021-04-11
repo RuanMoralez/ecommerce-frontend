@@ -1,5 +1,5 @@
 <template>
-  <div id="group-banner">
+  <div class="group-banner">
     <VueSlickCarousel :arrows="true" :dots="true" :autoplay="true">
       <div><a href="#"><img class="slide-img"
                             src="https://appb2c-pages.s3.amazonaws.com/site/2020/ace/vitrine-bubble-blusas-desktop.jpg"></a>

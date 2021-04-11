@@ -1,7 +1,7 @@
 <template>
 
   <!-- Group banner -->
-  <div id="group-banner">
+  <div class="group-banner">
     <!-- Col1 slide -->
     <div id="box-column1">
       <!-- Slide -->
@@ -85,10 +85,11 @@ export default {
 
 @media (min-width: 768px) {
 
-  #group-banner {
+  .group-banner {
     padding: 1%;
     height: 270px;
     display: flex;
+    margin-top: 60px;
   }
 
   #box-column1 {
@@ -122,7 +123,7 @@ export default {
 
 @media (min-width: 1024px) {
 
-  #group-banner {
+  .group-banner {
     height: 380px;
   }
 
