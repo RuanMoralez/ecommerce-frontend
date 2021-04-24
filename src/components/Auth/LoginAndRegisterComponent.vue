@@ -22,15 +22,17 @@
 
           <h3>Cadastre-se</h3>
 
-          <form>
+          <form @submit.prevent="handleSubmit">
             <label>Primeiro Nome</label><br>
-            <input type="text" name="firstName" placeholder="Ex. Joao"><br>
+            <input v-model="name" type="text" name="firstName" placeholder="Ex. Joao"><br>
             <label>último Nome</label><br>
-            <input type="text" name="lastName" placeholder="Ex. Silva"><br>
+            <input v-model="last_name" type="text" name="lastName" placeholder="Ex. Silva"><br>
             <label>E-mail</label><br>
-            <input type="email" name="email" placeholder="Ex. exemplo@exemplo.com.br"><br>
+            <input v-model="email" type="email" name="email" placeholder="Ex. exemplo@exemplo.com.br"><br>
             <label>Senha</label><br>
-            <input type="password" name="password"><br>
+            <input v-model="password" type="password" name="password" placeholder="Senha"><br>
+            <label>Confirmar senha</label><br>
+            <input v-model="password_confirmation" type="password" name="passwordConfirmation" placeholder="Confirmar senha"><br>
             <button>Continuar</button>
           </form>
         </div>
@@ -61,13 +63,28 @@ export default {
 
       user:{
         email: '',
-        password: ''
+        password: '',
+      },
+
+      //register user
+      register_user: {
+        name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        password_confirmation: ''
       }
+      
+
     }
   },
 
   mounted() {
     this.changeLoginAndRegister()
+    // Users.listar().then(resposta => {
+    //   console.log(resposta.data)
+    //   this.users = resposta.data
+    // })
   },
 
   methods:{
@@ -98,8 +115,21 @@ export default {
       //const user = JSON.parse(localStorage.getItem('user'));
       //console.log(user.id)
 
-    }
+    },
 
+    //register user
+    async handleSubmit() {
+      const response = await axios.post('register', {
+        name: this.name,
+        last_name: this.last_name,
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.password_confirmation
+      });
+
+      console.log(response)
+    }
+  
   }
 }
 </script>
