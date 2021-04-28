@@ -7,6 +7,7 @@ import './axios'
 Vue.config.productionTip = false
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+import './quasar'
 Vue.use(VueSidebarMenu)
 
 new Vue({

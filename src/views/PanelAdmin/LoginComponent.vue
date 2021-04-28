@@ -1,10 +1,10 @@
 <template>
   <div>
     <div id="nav">
-      <h2>Admin - Ecommerce</h2>
+      <h4>Admin - Ecommerce</h4>
     </div>
 
-    <div id="container">
+    <!-- <div id="container">
 
       <div id="login">
         <form @submit.prevent="login">
@@ -16,14 +16,59 @@
         </form>
       </div>
 
-    </div>
+    </div> -->
 
+    <div id="container">
+        <div class="col q-gutter-y-md" style="max-width: 350px;">
+          <q-input outlined v-model="text1" :dense="dense"  placeholder="exemplo@exemplo.com" >
+            <template v-slot:append>
+              <q-icon v-if="text1 !== ''" @click="text1 = ''" name="close" class="cursor-pointer" />
+              <q-icon name="mail" />
+            </template>
+          </q-input>
+
+          <q-input outlined v-model="text2" :dense="dense"  placeholder="senha" :type="isPwd ? 'password' : 'text'"  >
+            <template v-slot:append>
+              <q-icon v-if="text2 !== ''" @click="text2 = ''" name="close" class="cursor-pointer" />
+              <q-icon
+                :name="isPwd ? 'visibility_off' : 'visibility'"
+                class="cursor-pointer"
+                @click="isPwd = !isPwd"
+              />
+            </template>
+          </q-input>
+
+          
+          <div class="row items-center">
+            <q-checkbox v-model="right" label="Lembrar senha" />
+            
+            <div class="col">
+              <a href="#" class="float-right" style="color:black;">Alterar senha</a>
+            </div>
+              
+            
+          </div>
+          
+
+           <q-btn style="background: #6959CD; color: white" label="Entrar" no-caps />
+        </div>
+      </div>
+    
   </div>
 </template>
 
 <script>
 export default {
-  name: "LoginComponent"
+  name: "LoginComponent",
+  data () {
+    return {
+      text1:'',
+      text2:'',
+      isPwd: true,
+      dense: true,
+      right: false,
+    }
+  }
 }
 </script>
 

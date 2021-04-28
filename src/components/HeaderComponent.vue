@@ -3,7 +3,7 @@
 
     <nav v-bind:style="{backgroundColor: themeColor}">
       <!-- / Logo / -->
-      <div id="logo"><h2><a href="#">E-commerce</a></h2></div>
+      <div id="logo"><h6><a href="#">E-commerce</a></h6></div>
       <!-- / search / -->
       <div id="search">
         <input type="text" placeholder="Faça sua pesquisa..."/>
