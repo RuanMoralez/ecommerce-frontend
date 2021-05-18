@@ -9,18 +9,25 @@ import LoginComponent from "../views/PanelAdmin/LoginComponent";
 Vue.use(VueRouter)
 
 // Authorization for access routes
-function AuthorizationAdmin(to, from, next){
-    var isAuthenticated;
-    var isAdmin = 'admin';
+function AuthorizationAdmin(to, from, next) {
+    let isAuthenticated;
+    let isAdmin;
+    let user;
 
-    localStorage.getItem('token') ? isAuthenticated = true: isAuthenticated = false
-    isAdmin === 'admin' ? isAdmin = true: isAdmin = false
+    //verify token
+    localStorage.getItem('token') ? isAuthenticated = true : isAuthenticated = false;
+    //verify exist user
+    localStorage.getItem('user') ? user = JSON.parse(localStorage.getItem('user')) : user = false;
+    //verify if role is admin
+    user.role == 1 ? isAdmin = true: isAdmin = false;
 
-    if(isAuthenticated === true && isAdmin === true){
+    //liberation access for route
+    if (isAuthenticated === true && isAdmin === true) {
         next();
-    }else{
+    } else {
         next('/login');
     }
+
 }
 
 const routes = [
