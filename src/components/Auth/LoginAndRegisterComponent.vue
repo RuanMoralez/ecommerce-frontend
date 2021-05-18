@@ -177,6 +177,7 @@
 
 
 import axios from 'axios'
+
 import { required, sameAs, minLength, email  } from 'vuelidate/lib/validators'
 
 export default {
@@ -259,7 +260,6 @@ export default {
 
     //Authentication User
     // async login(){
-
     //   const response = await axios.post('http://127.0.0.1:8000/api/auth/login', this.user)
     //   //localStorage.setItem('token', response.data.token);
     //   localStorage.setItem('user', JSON.stringify(response.data.user))
@@ -278,11 +278,6 @@ export default {
         const response = await axios.post('http://127.0.0.1:8000/api/auth/login', this.user)
         //localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user))
-        location.reload()
-
-        //localStorage.setItem('user', response.data.user)
-        //const user = JSON.parse(localStorage.getItem('user'));
-        //console.log(user.id)
 
         this.progress2 = 'none'
 
@@ -292,6 +287,14 @@ export default {
           icon: 'done',
           message: 'Bem vindo! '
         })
+
+        location.reload()
+
+        //localStorage.setItem('user', response.data.user)
+        //const user = JSON.parse(localStorage.getItem('user'));
+        //console.log(user.id)
+
+        
 
       } catch (e) {
         this.progress2 = 'none'

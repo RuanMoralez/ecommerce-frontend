@@ -91,6 +91,7 @@ export default {
     },
     logout: function (){
       localStorage.removeItem('user')
+      localStorage.removeItem('token')
       location.reload()
     }
   }
