@@ -6,7 +6,7 @@
 
     <div class="card-content">
 
-      <h4>Camiseta Hang Loose Classic Preta</h4>
+      <h6>Camiseta Hang Loose Classic Preta</h6>
       <div class="description">
         <span>R$ 99,90 </span>
         <span>R$ 54,99</span>

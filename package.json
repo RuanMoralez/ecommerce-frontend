@@ -9,15 +9,18 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-carousel": "^1.0.6",
+    "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
+    "quasar": "^1.0.0",
     "vue": "^2.6.12",
     "vue-carousel": "^0.18.0",
     "vue-router": "^3.2.0",
     "vue-sidebar-menu": "^4.7.4",
     "vue-slick": "^1.1.16",
     "vue-slick-carousel": "^1.0.6",
+    "vuelidate": "^0.7.6",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -29,6 +32,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "vue-cli-plugin-quasar": "~3.0.1",
     "vue-template-compiler": "^2.6.12"
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="content">
 
-    <h2>Orfertas com preços imbatível</h2>
+    <h4>Orfertas com preços imbatível</h4>
 
     <div class="listProduct">
 

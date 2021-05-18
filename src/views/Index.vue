@@ -1,23 +1,17 @@
 <template>
-
   <div>
-
     <HeaderComponent v-bind:themeColor="color" @openLoginAndRegister="updateStatusLoginAndRegister(true)" v-bind:user="user"/>
-
     <Banner1Component v-if="banner === '1' "/>
     <Banner2Component v-if="banner === '2' "/>
     <Banner3Component v-if="banner === '3' "/>
     <LoginAndRegister v-if="statusLoginAndRegister" @closeLoginAndRegister="updateStatusLoginAndRegister(false)"/>
-
     <ListProductComponent/>
-
-
   </div>
-
 </template>
 
-<script>
 
+
+<script>
 import HeaderComponent from "@/components/HeaderComponent";
 import Banner1Component from "@/components/ThemeBanner/Banner1Component";
 import Banner2Component from "@/components/ThemeBanner/Banner2Component";
