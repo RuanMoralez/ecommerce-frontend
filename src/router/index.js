@@ -9,26 +9,26 @@ import LoginComponent from "../views/PanelAdmin/LoginComponent";
 Vue.use(VueRouter)
 
 // Authorization for access routes
-function AuthorizationAdmin(to, from, next) {
-    let isAuthenticated;
-    let isAdmin;
-    let user;
+// function AuthorizationAdmin(to, from, next) {
+//     let isAuthenticated;
+//     let isAdmin;
+//     let user;
 
-    //verify token
-    localStorage.getItem('token') ? isAuthenticated = true : isAuthenticated = false;
-    //verify exist user
-    localStorage.getItem('user') ? user = JSON.parse(localStorage.getItem('user')) : user = false;
-    //verify if role is admin
-    user.role == 1 ? isAdmin = true: isAdmin = false;
+//     //verify token
+//     localStorage.getItem('token') ? isAuthenticated = true : isAuthenticated = false;
+//     //verify exist user
+//     localStorage.getItem('user') ? user = JSON.parse(localStorage.getItem('user')) : user = false;
+//     //verify if role is admin
+//     user.role == 1 ? isAdmin = true: isAdmin = false;
 
-    //liberation access for route
-    if (isAuthenticated === true && isAdmin === true) {
-        next();
-    } else {
-        next('/login');
-    }
+//     //liberation access for route
+//     if (isAuthenticated === true && isAdmin === true) {
+//         next();
+//     } else {
+//         next('/login');
+//     }
 
-}
+// }
 
 const routes = [
     {
@@ -45,19 +45,19 @@ const routes = [
         path: '/admin',
         name: 'Home',
         component: Home,
-        beforeEnter: AuthorizationAdmin
+        // beforeEnter: AuthorizationAdmin
     },
     {
         path: '/admin/tema-cor',
         name: 'ThemeColor',
         component: ThemeColor,
-        beforeEnter: AuthorizationAdmin
+        // beforeEnter: AuthorizationAdmin
     },
     {
         path: '/admin/tema-banner',
         name: 'ThemeBanner',
         component: ThemeBanner,
-        beforeEnter: AuthorizationAdmin
+        // beforeEnter: AuthorizationAdmin
     },
     {
         path: '/about',

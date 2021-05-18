@@ -4,9 +4,9 @@
     <!-- Col1 slide -->
     <div id="box-column1">
       <!-- Slide -->
-      <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;"
-                        :autoplay="true">
-        <div>
+      <!-- <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;"
+                        :autoplay="true"> -->
+        <!-- <div>
           <img class="slide-img"
                src="https://super.abril.com.br/wp-content/uploads/2012/03/por-que-medidas-de-roupas-nacc83o-sacc83o-padronizadas.jpg"
                alt="">
@@ -25,10 +25,10 @@
           <div class="slide">
             <img class="slide-img" src="http://blog.sebraees.com.br/wp-content/uploads/2019/02/roupas-1.jpeg" alt="">
           </div>
-        </div>
+        </div> -->
       
         <!-- show btn next/previows -->
-        <template #prevArrow="arrowOption">
+        <!-- <template #prevArrow="arrowOption">
           <div class="custom-arrow">
             {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
           </div>
@@ -38,9 +38,33 @@
           <div class="custom-arrow">
             {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
           </div>
-        </template>
+        </template> -->
       
-      </VueSlickCarousel>
+      <!-- </VueSlickCarousel> -->
+
+      <!-- new carousel -->
+        <q-carousel
+          height="100%"
+          animated
+          v-model="slide"
+          navigation
+          prev-icon="arrow_back_ios"
+          next-icon="arrow_forward_ios"
+          navigation-icon="radio_button_unchecked"
+          infinite
+          :autoplay="autoplay"
+          arrows
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          @mouseenter="autoplay = false"
+          @mouseleave="autoplay = true"
+        >
+          <q-carousel-slide :name="1" img-src="https://super.abril.com.br/wp-content/uploads/2012/03/por-que-medidas-de-roupas-nacc83o-sacc83o-padronizadas.jpg" />
+          <q-carousel-slide :name="2" img-src="https://namu.com.br/portal/wp-content/uploads/2019/10/roupas.png" />
+          <q-carousel-slide :name="3" img-src="https://exame.com/wp-content/uploads/2020/05/walmart-1.jpg" />
+          <q-carousel-slide :name="4" img-src="http://blog.sebraees.com.br/wp-content/uploads/2019/02/roupas-1.jpeg" />
+        </q-carousel>
+
     </div>
     <!-- Col2 Banner -->
     <div id="box-column2">
@@ -57,14 +81,20 @@
 
 <script>
 
-import VueSlickCarousel from 'vue-slick-carousel'
+// import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
   name: "Banner3Component",
   components: {
-    VueSlickCarousel
+    // VueSlickCarousel
+  },
+  data: function (){
+    return{
+      slide: 1,
+      autoplay: true
+    }
   }
 }
 </script>

@@ -3,7 +3,7 @@
 
     <div id="container">
       <div id="content">
-        <div class="box login" v-bind:style="{backgroundColor: loginBackground}">
+        <div class="box login q-pa-md" v-bind:style="{backgroundColor: loginBackground}">
           <h3 v-bind:style="{color: loginTextColor}">Login do cliente</h3>
 
           <!-- <form @submit.prevent="login">
@@ -24,6 +24,8 @@
                 @keyup.enter="submit"
                 :error="$v.user.email.$error"
                 error-message="E-mail invalido"
+                :rules="[val => !!val || '* Obrigatório']"
+                lazy-rules
               />
               <!-- password -->
               <q-input dark outlined :dense="dense" placeholder="senha" :type="isPwd1 ? 'password' : 'text'"
@@ -34,6 +36,8 @@
                 @keyup.enter="submit"
                 :error="$v.user.password.$error"
                 error-message="Mínimo 4 caracteres, senha invalida!"
+                :rules="[val => !!val || '* Obrigatório']"
+                lazy-rules
               >
                 <template v-slot:append>
                   <q-icon
@@ -59,7 +63,7 @@
           </q-form>
         </div>
 
-        <div class="box register">
+        <div class="box register q-pa-md">
           <!-- close button -->
           <div id="close"><q-icon name="close" style="font-size: 32px;cursor:pointer;" class="close" v-on:click="this.closeLoginAndRegister" /></div>
           

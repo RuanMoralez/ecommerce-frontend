@@ -8,9 +8,11 @@
           animated
           v-model="slide"
           navigation
+          prev-icon="arrow_back_ios"
+          next-icon="arrow_forward_ios"
+          navigation-icon="radio_button_unchecked"
           infinite
           height="100%"
-          navigation-icon="remove"
           :autoplay="autoplay"
           arrows
           transition-prev="slide-right"
@@ -26,14 +28,6 @@
           
           
         </q-carousel>
-
-    
-      
-
-
-
-
-
 
       <!-- Slide -->
       <!-- <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="false"> -->
