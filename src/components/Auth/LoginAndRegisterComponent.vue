@@ -280,26 +280,25 @@ export default {
 
       try{
         const response = await axios.post('http://127.0.0.1:8000/api/auth/login', this.user)
+
+        // this.progress2 = 'none'
+
+        // this.$q.notify({
+        //   color: 'green-6',
+        //   textColor: 'white',
+        //   icon: 'done',
+        //   message: 'Bem vindo!'
+        // })
+
         //localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user))
-
-        this.progress2 = 'none'
-
-        this.$q.notify({
-          color: 'green-6',
-          textColor: 'white',
-          icon: 'done',
-          message: 'Bem vindo! '
-        })
 
         location.reload()
 
         //localStorage.setItem('user', response.data.user)
         //const user = JSON.parse(localStorage.getItem('user'));
         //console.log(user.id)
-
         
-
       } catch (e) {
         this.progress2 = 'none'
 
