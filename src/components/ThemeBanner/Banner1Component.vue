@@ -4,9 +4,41 @@
   <div class="group-banner">
     <!-- Col1 slide -->
     <div id="box-column1">
+        <q-carousel
+          animated
+          v-model="slide"
+          navigation
+          infinite
+          height="100%"
+          navigation-icon="remove"
+          :autoplay="autoplay"
+          arrows
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          @mouseenter="autoplay = false"
+          @mouseleave="autoplay = true"
+        >
+
+          <q-carousel-slide :name="1" img-src="https://super.abril.com.br/wp-content/uploads/2012/03/por-que-medidas-de-roupas-nacc83o-sacc83o-padronizadas.jpg" />
+          <q-carousel-slide :name="2" img-src="https://namu.com.br/portal/wp-content/uploads/2019/10/roupas.png" />
+          <q-carousel-slide :name="3" img-src="https://exame.com/wp-content/uploads/2020/05/walmart-1.jpg" />
+          <q-carousel-slide :name="4" img-src="http://blog.sebraees.com.br/wp-content/uploads/2019/02/roupas-1.jpeg" />
+          
+          
+        </q-carousel>
+
+    
+      
+
+
+
+
+
+
       <!-- Slide -->
       <!-- <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="false"> -->
-        <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="false">
+
+      <!-- <VueSlickCarousel id="slide-slick" :arrows="true" :dots="true" style="width: 100%; height: 100%;" :autoplay="false">
         <div>
           <img class="slide-img"
                src="https://super.abril.com.br/wp-content/uploads/2012/03/por-que-medidas-de-roupas-nacc83o-sacc83o-padronizadas.jpg"
@@ -28,7 +60,7 @@
           </div>
         </div>
 
-        <!-- show btn next/previows -->
+        show btn next/previows
         <template #prevArrow="arrowOption">
           <div class="custom-arrow">
             {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
@@ -41,8 +73,9 @@
           </div>
         </template>
 
-      </VueSlickCarousel>
+      </VueSlickCarousel> -->
     </div>
+
     <!-- Col2 Banner -->
     <div id="box-column2">
       <!-- Banner1 -->
@@ -59,17 +92,20 @@
 
 <script>
 
-import VueSlickCarousel from 'vue-slick-carousel'
+// import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
   name: "BannerComponent",
-  components: {
-    VueSlickCarousel
-  },
+  // components: {
+  //   VueSlickCarousel
+  // },
   data: function () {
-    return {}
+    return {
+      slide: 1,
+      autoplay: true,
+    }
   }
 }
 </script>
